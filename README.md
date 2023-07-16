@@ -31,6 +31,12 @@ Moreover, a design space exploration is carried to decide the parallelization fa
 ```
 
 ---
+## How to Build
+1. Make sure [Xilinx Vitis](https://www.xilinx.com/developer/products/vitis.html) is installed.
+2. Change configurations in *Makefile* or *src/u250-krnl.cfg* if necessary.
+3. Run ```make xclbin```. For Vitis 2021 or prior versions, consider running ```make xclbin``` using faketime with a [timestamp earlier than 20220101](https://support.xilinx.com/s/question/0D52E00006uxPZBSA2/vitis20201-and-vitis20211-an-error-bad-lexical-cast-has-occurred-suddenly).
+
+---
 ## Citation
 
 Please consider citing if you find the paper and/or the source code useful. :) 
