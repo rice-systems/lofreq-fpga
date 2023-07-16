@@ -12,15 +12,15 @@ With the same architecture, there are multiple design points with different hard
 
 ## Source Directory
 ```
-├── Makefile
+├── Makefile: commands to build .xo and .xclbin.
 ├── README.md
 └── src 
-    ├── Makefile
-    ├── hls.tcl
-    ├── krnl.c
-    ├── krnl.h
-    ├── runPre.tcl
-    └── u250-krnl.cfg
+    ├── Makefile: commands to run Vitis HLS sythesis.
+    ├── hls.tcl: tcl script to set up and run HLS C sythesis.
+    ├── krnl.c: HLS C source code.
+    ├── krnl.h: header file.
+    ├── runPre.tcl: building configuration.
+    └── u250-krnl.cfg: Vivado implementation strategy control and SLR connectivity specification.
 ```
 
 ---
