@@ -1,12 +1,19 @@
 ## Overview
 
-This repo includes the research artifact for our paper [**"An FPGA Accelerator for Genome Variant Calling"**](https://ieeexplore.ieee.org/document/9786183) published at FCCM 2022. 
+This repo is for research artifacts of paper "[**An FPGA Accelerator for Genome Variant Calling"**](https://ieeexplore.ieee.org/document/9786183) published at [FCCM 2022](https://www.fccm.org/past/2022/technical-program-2022/).
 
-The paper presents an FPGA-based accelerator enabling [LoFreq](https://github.com/CSB5/lofreq) to call variants 20X faster than the multiprocess CPU baseline. The figure below shows the speedup on 7 SARS-CoV-2 datasets. The speedup mainly results from multiple levels of parallelization and pipelining.
+The paper presents an FPGA-based accelerator of [LoFreq](https://github.com/CSB5/lofreq) which runs 30X faster than the multiprocess CPU baseline. The figure below shows the speedup on 7 SARS-CoV-2 datasets. The speedup mainly results from multiple levels of parallelization and pipelining.
 
 <img src="https://user-images.githubusercontent.com/19209239/192879723-d8a65ef7-d026-452c-9fda-48a9c737d25a.png" width="700" height="270" />
 
-With the same architecture, there are multiple design points with different hardware configurations. Among them, **Design 3** outperforms the rest. The HLS implementation of Design 3 is shared in this repo. It is also easy to change the source code into other design points, which can be done by simply changing the pragmas (one bonus point of using HLS).
+The dataflow of LoFreq's main computation is shown in the figure below. The number
+of Outer Loop Iterations is commonly several million. (More details can be found [here](https://dl.acm.org/doi/pdf/10.1145/3595297).) Straightforward parallelization is prevented due to the data dependency. Our FPGA accelerator achieves massive speedup from exploiting multiple levels of parallelism:
+- Processing multiple data in parallel
+- Parallelizing memory access, logarithm pre-compute, and inner loop iterations
+- Parallelizing and pipelining inner loop iterations
+Moreover, a design space exploration is carried to decide the parallelization factor at each level in order to achieve the best performance given finite resources. The figure above shows results for four points in this design space, among which **Design 3** is the best.
+
+<img src="https://github.com/rice-systems/lofreq-fpga/assets/19209239/2c066435-de6f-4f18-a5b8-e5fb085ff38c" width="700" height="300" />
 
 ---
 
