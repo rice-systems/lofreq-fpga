@@ -10,5 +10,5 @@
 #define UNROLL_FACTOR 8 // number of PEs parallelizing the inner loop
 #define LOGZERO -1e100
 
-void krnl(const double * err_probs, int N, int K, double * probvec_output);
+void krnl(const double *err_probs, int N, int K, double *probvec_output);
 #endif
