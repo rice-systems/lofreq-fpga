@@ -39,7 +39,7 @@ Moreover, a design space exploration is carried to decide the parallelization fa
 ---
 ## Citation
 
-Please consider citing if you find the paper and/or the source code useful. :) 
+Please consider citing our paper if you find the paper/code useful. :)
 
 ```
 @INPROCEEDINGS{9786183,
