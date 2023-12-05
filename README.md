@@ -6,7 +6,7 @@ The paper presents an FPGA-based accelerator of [LoFreq](https://github.com/CSB5
 
 <img src="https://user-images.githubusercontent.com/19209239/192879723-d8a65ef7-d026-452c-9fda-48a9c737d25a.png" width="700" height="270" />
 
-The dataflow of LoFreq's main computation is shown in the figure below. The number
+The dataflow of LoFreq's key algorithm ([Possion Binomial Distribution](https://github.com/stan-dev/math/blob/504107d0a12cf04507cc4d3a23bf58ae151d191f/stan/math/prim/fun/poisson_binomial_log_probs.hpp)) is shown in the figure below. The number
 of Outer Loop Iterations is commonly several million. (More details can be found [here](https://dl.acm.org/doi/pdf/10.1145/3595297).) Straightforward parallelization is prevented due to the data dependency. Our FPGA accelerator achieves massive speedup from exploiting multiple levels of parallelism:
 - Processing multiple data in parallel
 - Parallelizing memory access, logarithm pre-compute, and inner loop iterations
