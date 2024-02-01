@@ -11,6 +11,7 @@ of Outer Loop Iterations is commonly several million. (More details can be found
 - Processing multiple data in parallel
 - Parallelizing memory access, logarithm pre-compute, and inner loop iterations
 - Parallelizing and pipelining inner loop iterations
+
 Moreover, a design space exploration is carried to decide the parallelization factor at each level in order to achieve the best performance given finite resources. The figure above shows results for four points in this design space, among which **Design 3** is the best.
 
 <img src="https://github.com/rice-systems/lofreq-fpga/assets/19209239/2c066435-de6f-4f18-a5b8-e5fb085ff38c" width="700" height="300" />
